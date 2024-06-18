@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classificação de Dígitos</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <h1>Envie uma Imagem de um Dígito</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Classificar">
+    </form>
+    {% if digit_cnn is not none %}
+        <h2>Resultado CNN: {{ digit_cnn }}</h2>
+    {% endif %}
+    {% if digit_linear is not none %}
+        <h2>Resultado Linear: {{ digit_linear }}</h2>
+    {% endif %}
+</body>
+</html>
